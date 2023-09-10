@@ -11,11 +11,11 @@ use bevy_inspector_egui::quick::WorldInspectorPlugin;
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_plugin(WorldInspectorPlugin::new())
-        .add_plugin(TweeningPlugin)
-        .add_plugin(ToastPlugin)
-        .add_startup_system(setup)
-        .add_system(key_handler)
+        .add_plugins(WorldInspectorPlugin::new())
+        .add_plugins(TweeningPlugin)
+        .add_plugins(ToastPlugin)
+        .add_systems(Startup, setup)
+        .add_systems(Update, key_handler)
         .run();
 }
 
